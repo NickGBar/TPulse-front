@@ -1,0 +1,375 @@
+/* src/components/Settings.css */
+.settings-modal {
+  padding: 8px 0;
+}
+
+.settings-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+}
+
+.settings-tab {
+  flex: 1;
+  background: none;
+  border: none;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+  color: var(--tg-text-color);
+}
+
+.settings-tab.active {
+  border-bottom-color: var(--tg-button-color);
+  color: var(--tg-button-color);
+}
+
+.settings-tab:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.settings-content {
+  min-height: 300px;
+}
+
+/* Channels Settings */
+.channels-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.settings-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  color: var(--tg-text-color);
+}
+
+.empty-channels {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--tg-hint-color);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.empty-hint {
+  font-size: 13px;
+  color: var(--tg-hint-color);
+  margin-top: 8px;
+}
+
+.channels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.channel-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+  background: var(--tg-bg-color);
+}
+
+.channel-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.channel-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.channel-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--tg-button-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: white;
+}
+
+.channel-details {
+  flex: 1;
+}
+
+.channel-name {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--tg-text-color);
+  margin-bottom: 2px;
+}
+
+.channel-username {
+  font-size: 12px;
+  color: var(--tg-hint-color);
+}
+
+.channel-stats {
+  font-size: 11px;
+  color: var(--tg-hint-color);
+  margin-top: 2px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--tg-hint-color);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remove-btn:hover {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+.remove-btn.removing {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.add-channel-btn {
+  background: var(--tg-button-color);
+  color: var(--tg-button-text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  text-align: center;
+}
+
+.add-channel-btn:hover {
+  opacity: 0.9;
+}
+
+/* Topics Settings */
+.topics-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.settings-description {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  color: var(--tg-hint-color);
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.topic-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background: var(--tg-bg-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  color: var(--tg-text-color);
+}
+
+.topic-item:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.topic-item.selected {
+  border-color: var(--tg-button-color);
+  background: rgba(37, 129, 204, 0.1);
+}
+
+.topic-emoji {
+  font-size: 16px;
+}
+
+.topic-name {
+  font-weight: 500;
+}
+
+/* Topics Header */
+.topics-header {
+  margin-bottom: 20px;
+}
+
+.topics-quick-actions {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.quick-action-btn {
+  background: none;
+  border: 1px solid var(--tg-button-color);
+  color: var(--tg-button-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.quick-action-btn:hover {
+  background: var(--tg-button-color);
+  color: var(--tg-button-text-color);
+}
+
+/* Topics Footer */
+.topics-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 16px;
+  margin-top: auto;
+}
+
+.selected-count {
+  text-align: center;
+  font-size: 14px;
+  color: var(--tg-hint-color);
+  margin-bottom: 12px;
+}
+
+.changes-indicator {
+  color: #ff6b00;
+  font-weight: 500;
+}
+
+.topics-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.topics-actions .secondary-button,
+.topics-actions .primary-button {
+  flex: 1;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+/* Кнопки */
+.primary-button {
+  background: var(--tg-button-color);
+  color: var(--tg-button-text-color);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.primary-button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.primary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: transparent;
+  color: var(--tg-button-color);
+  border: 1px solid var(--tg-button-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondary-button:hover:not(:disabled) {
+  background: var(--tg-button-color);
+  color: var(--tg-button-text-color);
+}
+
+.secondary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Channels Header */
+.channels-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.debug-button {
+  background: none;
+  border: 1px solid #ff6b00;
+  color: #ff6b00;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.debug-button:hover {
+  opacity: 1;
+}
+
+.debug-info {
+  text-align: center;
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--tg-hint-color);
+}
+
+/* Loading states */
+.loading-topics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: var(--tg-hint-color);
+}
+
+.loading-topics .spinner {
+  margin-bottom: 12px;
+}

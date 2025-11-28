@@ -1,0 +1,182 @@
+/* src/Components/Post.css */
+.post {
+  background: var(--tg-card-bg);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  padding: 16px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+@media (hover: none) {
+  .post:active {
+    transform: scale(0.995);
+  }
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.channel-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+}
+
+.channel-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--tg-button-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.channel-details {
+  flex: 1;
+}
+
+.channel-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--tg-text-color); /* ← ПЕРЕМЕННАЯ! */
+  margin-bottom: 2px;
+}
+
+.post-meta {
+  font-size: 13px;
+  color: var(--tg-hint-color); /* ← ПЕРЕМЕННАЯ! */
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--tg-hint-color); /* ← ПЕРЕМЕННАЯ! */
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.menu-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Контент поста */
+.post-content {
+  margin-bottom: 12px;
+}
+
+/* Заголовок и текст — через переменные! */
+.post-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--tg-text-color); /* ← КЛЮЧЕВОЙ МОМЕНТ */
+  margin-bottom: 8px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.post-text {
+  font-size: 14px;
+  color: var(--tg-text-color); /* ← КЛЮЧЕВОЙ МОМЕНТ */
+  line-height: 1.5;
+  margin-bottom: 12px;
+  opacity: 0.9;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  word-break: break-word;
+}
+
+/* Изображение */
+.post-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  aspect-ratio: 16 / 9;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Заглушка, если изображение не загрузилось */
+.post-image img[style*="display: none"] + .image-fallback {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--tg-card-bg);
+  color: var(--tg-hint-color);
+  font-size: 14px;
+}
+
+/* Кнопки действий */
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 12px;
+  margin-top: 12px;
+  border-top: 1px solid var(--tg-border-color);
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  opacity: 0.7;
+  color: var(--tg-text-color); /* ← ПЕРЕМЕННАЯ! */
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn:hover,
+.action-btn:focus {
+  opacity: 1;
+}
+
+.action-btn:active {
+  transform: scale(0.92);
+  opacity: 1;
+}
+
+@keyframes likeAnimation {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.action-btn.liked {
+  animation: likeAnimation 0.3s ease;
+  color: var(--tg-button-color, #ff4444);
+}

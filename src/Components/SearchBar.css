@@ -1,0 +1,47 @@
+/* src/components/SearchBar.css */
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--tg-bg-color);
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin-bottom: var(--spacing-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-icon {
+  font-size: 16px;
+  color: var(--tg-hint-color);
+  margin-right: 8px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  color: var(--tg-text-color);
+  padding: 4px 0;
+}
+
+.search-input::placeholder {
+  color: var(--tg-hint-color);
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--tg-hint-color);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.clear-button:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
